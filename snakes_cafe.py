@@ -38,20 +38,20 @@ Unicorn Tears
 
 
 status = True
-ordernumber = 1
+orderItem = []
+
 
 while status == True:
     order2 = input('> ')
+    orderItem.append(order2)
     if order2 == "quit":
         status= False
         sys.exit()
-        
-    if ordernumber == 1:
-        print(f'**{ordernumber} order of {order2} has been added to your meal **')
-    elif ordernumber > 1:
-        print(f'**{ordernumber} orders of {order2} have been added to your meal**')
-    
-    ordernumber +=1
+
+    if orderItem.count(order2) == 1:
+        print(f'**{orderItem.count(order2)} order of {order2} has been added to your meal **')
+    elif orderItem.count(order2) > 1:
+        print(f'**{orderItem.count(order2)} orders of {order2} have been added to your meal**')
 
 
 
