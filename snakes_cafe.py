@@ -1,3 +1,4 @@
+import sys
 
 print("""**************************************
 **    Welcome to the Snakes Cafe!   **
@@ -34,15 +35,22 @@ Unicorn Tears
 ***********************************
 ** What would you like to order? **
 ***********************************""")
-order = input('> ')
+
+
+status = True
 ordernumber = 1
 
-while order != 'quit':
-    order = input('> ')
+while status == True:
+    order2 = input('> ')
+    if order2 == "quit":
+        status= False
+        sys.exit()
+        
     if ordernumber == 1:
-        print(f'**{ordernumber} order of {order} has been added to your meal **')
+        print(f'**{ordernumber} order of {order2} has been added to your meal **')
     elif ordernumber > 1:
-        print(f'**{ordernumber} orders of {order} have been added to your meal**')
+        print(f'**{ordernumber} orders of {order2} have been added to your meal**')
+    
     ordernumber +=1
 
 
